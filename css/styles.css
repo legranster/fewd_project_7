@@ -43,12 +43,23 @@ img {
 }
 
 #bell {
-    stroke:rgb(46, 182, 46);
     transition: 1s;
+    position: relative;
 }
 
-#bell:hover{
-    stroke: white;
+.notifications:after {
+    content:"";
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background: rgb(46, 182, 46);
+    display:inline-block;
+    position: absolute;
+    top:27px;
+}
+
+.notifications:hover::after {
+    display:none;
 }
 
 .avatar {
@@ -86,14 +97,6 @@ nav {
     padding: 1em;    
 }
 
-li {
-    display: inline;
-    text-decoration: none;
-    padding: 1em;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
 .nav-active {
     border: 2px solid rgb(46, 182, 46);
     background-color: rgb(46, 182, 46);
@@ -104,11 +107,27 @@ li {
     color: white;
 }
 
+.traffic-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.traffic-nav {
+    text-align: right;
+}
+
+.traffic-nav-link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 10px;
+}
+
 .social-container {
     background-color: lightgray;
     border: 1px solid darkgray;
     border-radius: 5px;
-    margin: 1em;
+    margin-bottom: 1em;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -342,6 +361,12 @@ main {
 }
 
 /* Media Queries */
+
+@media (min-width: 480px) {
+    .social-container {
+        margin: 1em;
+    }
+}
 
 @media (min-width: 768px) {
     .grid{
