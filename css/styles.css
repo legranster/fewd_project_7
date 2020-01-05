@@ -1,0 +1,379 @@
+/* Font */
+
+@import url('https://fonts.googleapis.com/css?family=Kulim+Park:400,700&display=swap');
+
+body {
+    font-family: 'Kulim Park', Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* PLACEHOLDER STYLES */
+
+.chart-placeholder {
+    width: 100%;
+    height: 500px;
+}
+/* Main Styles */
+
+header {
+    background-color: #499797;
+}
+
+h1 {
+    padding-left: 1em;
+}
+
+h1,
+header h3 {
+    color: white;
+    padding-right: 1em;
+}
+
+img {
+    height: 40px;
+}
+
+.avatar {
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.search {
+    width: 70%;
+    background-color: lightgray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em;
+}
+
+.search input {
+    width: 50%;
+    padding: 0.5em;
+    border: none;
+}
+
+.notifications {
+    border-right: 1px solid darkgray;
+}
+
+.header-links img,
+.header-links h4,
+.notifications {
+    margin-right: 1em;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em;    
+}
+
+li {
+    display: inline;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.nav-active {
+    border: 2px solid rgb(46, 182, 46);
+    background-color: rgb(46, 182, 46);
+}
+
+.active {
+    background-color: rgb(46, 182, 46);
+    color: white;
+}
+
+.social-container {
+    background-color: lightgray;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.social-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #499797;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.social-image svg {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+.social-headline {
+    color: #499797;
+    font-weight: bold;
+    margin: 0;
+}
+
+.social-number {
+    font-size: 3em;
+    margin: 0;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.recent-activity div div p {
+    text-align: right;
+}
+
+form input {
+    padding: 0.5em;
+    border: 1px solid lightgray;
+}
+
+form textarea {
+    height: 10em;
+    padding: 1em 0.5em;
+    margin-top: 1em;
+    border: 1px solid lightgray;
+}
+
+#send,
+#save,
+#cancel {
+    border: none;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+#send, 
+#save {
+    background-color:  #499797;
+}
+#cancel {
+    background-color: darkgray;
+}
+
+#save,
+#cancel {
+    width: 40%;
+}
+
+
+/* Flexbox Styling*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.daily,
+.mobile-users,
+.social,
+.new-members,
+.recent-activity,
+.message-user,
+.settings {
+    padding: 2em;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.member-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgray;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#timezone {
+    border: 1px solid lightgray;
+    width: 90%;
+}
+
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.settings h3,
+.settings div {
+    width: 100%;
+}
+
+.userSetting * {
+    display: inline-block;
+}
+
+.userSetting strong {
+    width: 40%;
+}
+
+.userSetting label {
+    width: 100px;
+}
+
+.userSetting {
+    padding-bottom: 1em;
+}
+
+.traffic-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 3em;
+}
+
+.settings-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.alertBanner,
+.errorAlert {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.alertBanner{
+    background-color: #499797;
+}
+
+.errorAlert{
+    background-color: #974949;
+}
+
+.alertBanner p {
+    display: inline;
+}
+
+
+/* Grid Styling */
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main";
+}
+
+.social {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: 100px auto;
+        grid-template-rows: 100px auto;
+        grid-template-areas: 
+            "header header"
+            "nav main";
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-header,
+    #alert,
+    .traffic,
+    .social {
+        grid-column: 1 / -1;
+    }
+
+    .widget-container-full {
+        width: 80vw;
+    } 
+    
+    .widget-container-half {
+        width: 40vw;
+    }
+
+    .social {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .social {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
