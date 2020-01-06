@@ -1,4 +1,6 @@
-/* Font */
+/* ----------- */
+/* --Font -----*/
+/* ----------- */
 
 @import url('https://fonts.googleapis.com/css?family=Kulim+Park:400,700&display=swap');
 
@@ -8,14 +10,24 @@ body {
 }
 
 
-/* PLACEHOLDER STYLES */
+/* ----------- */
+/* Main Styles */
+/* ----------- */
 
-.chart-placeholder {
-    width: 100%;
-    height: 500px;
+
+.daily,
+.mobile-users,
+.social,
+.new-members,
+.recent-activity,
+.message-user,
+.settings {
+    padding: 2em;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
 }
 
-/* Main Styles */
+/* Header Styles */
 
 header {
     background-color: #499797;
@@ -40,11 +52,12 @@ img {
     padding-right: 1em;
     width: 40px;
     height: 40px;
+    position: relative;
 }
 
-#bell {
-    transition: 1s;
-    position: relative;
+#notificationBell:hover {
+    stroke: rgb(46, 182, 46);
+    stroke-width: 1.5;
 }
 
 .notifications:after {
@@ -55,19 +68,14 @@ img {
     background: rgb(46, 182, 46);
     display:inline-block;
     position: absolute;
-    top:27px;
-}
-
-.notifications:hover::after {
-    display:none;
+    left: 20px;
 }
 
 #notifications {
     background-color: lightgray;
     border: 1px solid black;
     position: absolute;
-    top:80px;
-    right:50px;
+    top:50px;
     display:none;
 }
 
@@ -78,11 +86,24 @@ img {
     height: 50px;
 }
 
+/* Nav Styles --------- */
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em;    
+}
+
+.nav-active {
+    background-color: #499797;
+}
+
+
+/* Body Styles  ---------*/
 
 .search {
     width: 70%;
     background-color: lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -90,7 +111,7 @@ img {
 }
 
 .search input {
-    width: 50%;
+    width: 100%;
     padding: 0.5em;
     border: none;
 }
@@ -101,20 +122,12 @@ img {
     margin-right: 1em;
 }
 
-nav {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1em;    
-}
-
-.nav-active {
-    border: 2px solid rgb(46, 182, 46);
-    background-color: rgb(46, 182, 46);
-}
-
 .active {
     background-color: rgb(46, 182, 46);
     color: white;
 }
+
+/* Charts Styles ---------- */
 
 .traffic-header {
     display: flex;
@@ -131,6 +144,8 @@ nav {
     padding: 1em;
     border-radius: 10px;
 }
+
+/* Social Styles --------- */
 
 .social-container {
     background-color: lightgray;
@@ -176,9 +191,7 @@ nav {
     margin: 0 auto;
 }
 
-.recent-activity div div p {
-    text-align: right;
-}
+/* Message User Styles ----------- */
 
 form input {
     padding: 0.5em;
@@ -215,60 +228,7 @@ form textarea {
 }
 
 
-/* Flexbox Styling*/
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.header-links {
-    display: flex;
-    align-items: center;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-}
-
-.daily,
-.mobile-users,
-.social,
-.new-members,
-.recent-activity,
-.message-user,
-.settings {
-    padding: 2em;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
-
-.member-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid darkgray;
-    flex-wrap: wrap;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+/* Settings Styles ----- */
 
 #timezone {
     border: 1px solid lightgray;
@@ -301,12 +261,69 @@ form {
     padding-bottom: 1em;
 }
 
+
+/* --------------------- */
+/* --Flexbox Styles -----*/
+/* --------------------- */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.member-container div {
+    padding-left: 1em;
+    flex-grow: 3;
+}
+
+.member-container > p {
+    padding-left: 2em;
+    display: inline-block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .traffic-header {
     display: flex;
     justify-content: space-between;
     padding: 1em 3em;
 }
 
+/* Alert Banner Styles -------- */
 
 .alertBanner,
 .errorAlert,
@@ -348,7 +365,10 @@ form {
 }
 
 
-/* Grid Styling */
+/* ------------------ */
+/* --Grid Styles -----*/
+/* ------------------ */
+
 
 header {
     grid-area: header;
@@ -377,11 +397,19 @@ main {
     grid-template-columns: 1fr;
 }
 
-/* Media Queries */
+/* Media Queries ------------- */
 
 @media (min-width: 480px) {
     .social-container {
         margin: 1em;
+    }
+
+    .member-container {
+        flex-direction: row;
+    }
+    
+    .member-container div {
+        flex-grow: 3;
     }
 }
 
@@ -409,10 +437,18 @@ main {
         grid-template-columns: 1fr 1fr;
     }
 
+    .search input {
+        width: 50%;
+    }
+
     .main-header,
     #alert,
     .traffic,
-    .social {
+    .social,
+    .new-members,
+    .recent-activity
+    
+    {
         grid-column: 1 / -1;
     }
 
@@ -421,17 +457,30 @@ main {
     } 
     
     .widget-container-half {
-        width: 40vw;
+        width: 30vw;
     }
 
     .social {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
     }
+
+    #notifications {
+        top:50px;
+        right: 10px;
+    }
 }
 
 @media (min-width: 1024px) {
     .social {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .new-members {
+        grid-column: 1 / 2;
+    }
+
+    .recent-activity {
+        grid-column: 2 / 3;
     }
 }
