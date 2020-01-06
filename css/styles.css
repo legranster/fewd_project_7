@@ -62,6 +62,15 @@ img {
     display:none;
 }
 
+#notifications {
+    background-color: lightgray;
+    border: 1px solid black;
+    position: absolute;
+    top:80px;
+    right:50px;
+    display:none;
+}
+
 .avatar {
     border-radius: 50%;
     display: inline-block;
@@ -193,6 +202,8 @@ form textarea {
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    display: block;
+    width: 100%;
 }
 
 #send, 
@@ -201,11 +212,6 @@ form textarea {
 }
 #cancel {
     background-color: darkgray;
-}
-
-#save,
-#cancel {
-    width: 40%;
 }
 
 
@@ -301,19 +307,20 @@ form {
     padding: 1em 3em;
 }
 
-.settings-button {
+
+.alertBanner,
+.errorAlert,
+.notificationAlert{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    color: white;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .alertBanner,
 .errorAlert {
-    display: flex;
-    justify-content: space-between;
-    color: white;
     border-radius: 5px;
-    padding-left: 2em;
-    padding-right: 2em;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -324,6 +331,16 @@ form {
 
 .errorAlert{
     background-color: #974949;
+}
+
+.notificationAlert{
+    background-color: white;
+    width: 300px;
+    margin-bottom: 1em;
+}
+
+.notificationAlert p {
+    color: black;
 }
 
 .alertBanner p {
