@@ -18,6 +18,8 @@ let timezoneSetting = document.getElementById('timezone');
 const saveButton = document.getElementById('save');
 const cancelButton = document.getElementById('cancel');
 
+const settingsAlert = document.getElementById('settingsAlert');
+
 // Chart.JS Content -----------//
 const trafficCanvas = document.getElementById("traffic-chart");
 const dailyCanvas = document.getElementById('daily-chart');
@@ -179,7 +181,7 @@ notificationTray.addEventListener('click', (e) => {
 });
 
 
-// Alert Banner HTML and event handler 
+// Top Alert Banner HTML and event handler 
 
 alertBanner.innerHTML = "<div class='alertBanner'><p><strong>Alert</strong>: Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p><p class='alert-banner-close'>X</p></div>"
 
@@ -214,22 +216,36 @@ alert.addEventListener('click', (e) => {
     }
 });
 
+// Settings Alert ----------------//
+
+
+
+
 // Local Storage funtimes
 
 saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
     let isEmailChecked = emailSetting.checked;
     let isProfileSettingChecked = profileSetting.checked;
     let timezoneSettingSelected = timezoneSetting.value;
     localStorage.setItem('email', isEmailChecked);
     localStorage.setItem('profile', isProfileSettingChecked);
     localStorage.setItem('timezone', timezoneSettingSelected);
+    settingsAlert.innerHTML='<div class="alertBanner"><p>Settings Saved!</p><p class="alert-banner-close">X</p></div>';
 });
 
 cancelButton.addEventListener('click', (e) => {
     localStorage.setItem('email', false);
     localStorage.setItem('profile', false);
     localStorage.setItem('timezone', "00000");
+    settingsAlert.innerHTML='<div class="alertBanner"><p>Settings Reset.</p><p class="alert-banner-close">X</p></div>';
 });
+
+settingsAlert.addEventListener('click', (e) => {
+    if(e.target.classList.contains('alert-banner-close')){
+        settingsAlert.innerHTML="";
+    }
+})
 
 emailSetting.checked = JSON.parse(localStorage.getItem('email'));
 profileSetting.checked = JSON.parse(localStorage.getItem('profile'));

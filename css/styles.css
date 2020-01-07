@@ -55,9 +55,13 @@ img {
     position: relative;
 }
 
+#notificationBell{
+    transition: transform 0.5s;
+}
+
 #notificationBell:hover {
-    stroke: rgb(46, 182, 46);
-    stroke-width: 1.5;
+    /* transform: scale(1.2); */
+    transform: scale(1.2) rotate(-15deg);
 }
 
 .notifications:after {
@@ -287,8 +291,9 @@ nav {
 
 .main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1em;
+    flex-wrap: wrap;
 }
 
 .member-container {
@@ -327,7 +332,8 @@ form {
 
 .alertBanner,
 .errorAlert,
-.notificationAlert{
+.notificationAlert,
+#settingsAlert{
     display: flex;
     justify-content: space-between;
     color: white;
@@ -352,8 +358,12 @@ form {
 
 .notificationAlert{
     background-color: white;
-    width: 300px;
+    width: 200px;
     margin-bottom: 1em;
+}
+
+#settingsAlert{
+    text-align: center;
 }
 
 .notificationAlert p {
@@ -413,6 +423,12 @@ main {
     }
 }
 
+@media(min-width: 504px){
+    .main-header{
+        justify-content: space-between;
+    }
+}
+
 @media (min-width: 768px) {
     .grid{
         grid-template-columns: 100px auto;
@@ -468,6 +484,9 @@ main {
     #notifications {
         top:50px;
         right: 10px;
+    }
+    .notificationAlert{
+        width: 300px;
     }
 }
 
